@@ -1,0 +1,21 @@
+typedef int ptrdiff_t;
+typedef int foo, bar, baz;
+typedef unsigned int size_t;
+typedef long int wchar_t;
+struct _HashNode { struct _HashNode *next; void *key; void *body; };
+typedef struct _HashNode HashNode;
+typedef size_t (*Hasher)(void *);
+typedef int (*Comparer)(void *, void *);
+typedef struct {
+    HashNode **thread;
+    size_t size;
+    Hasher hash;
+    Comparer compare;
+} HashTable;
+HashTable *hashNew(size_t size, Hasher hash, Comparer compare);
+void hashDestroy(HashTable *table);
+void *hashFind(HashTable *table, void *key);
+void *hashInsert(HashTable *table, void *key, void *body);
+int hashRemove(HashTable *table, void *key);
+size_t hashStrHash(void *);
+int hashStrcmp(void *, void *);
