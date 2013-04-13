@@ -110,14 +110,3 @@ options = {
 -- Main routine
 getopt.processArgs (prog)
 io.processFiles (clue)
-
-
--- Changelog
-
--- 11feb13  0.04 Updated to Lua 5.2 and current stdlib
--- 01feb04  0.03 Updated to Lua 5 and current stdlib
--- 27apr02  0.02 Moved prettyPrint to parse.lua
---               Use new object-oriented parser
--- 26apr02  0.01 Use new object-oriented lexer
--- 22apr02-
--- 24apr02  0.0  First version
