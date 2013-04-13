@@ -1,4 +1,4 @@
-#! /usr/bin/env lua5.2
+#!/usr/bin/env lua5.2
 prog = {
   name = "clue",
   banner = "clue 0.04 (11 Feb 2013) by Reuben Thomas (rrt@sc3d.org)",
@@ -41,7 +41,7 @@ prog = {
 
 
 require "std"
-require "parser"
+local Parser = require "rrt.parser"
 
 dofile "lexC.lua"
 dofile "CGrammar.lua"
@@ -86,7 +86,7 @@ end
 function clue ()
   local input = io.read ("*a")
   local lexer = CLexer {input}
-  local parser = parser.Parser {CGrammar}
+  local parser = Parser {CGrammar}
   local tree, to = parser:parse ("translation_unit", lexer)
   -- print (tree)
   if to == false then
@@ -108,7 +108,7 @@ options = {
 
 
 -- Main routine
-getopt.processArgs ()
+getopt.processArgs (prog)
 io.processFiles (clue)
 
 

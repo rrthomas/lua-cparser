@@ -9,7 +9,8 @@
 --   * numbers are all returned as integer_constant
 
 
-require "set"
+local set = require "std.set"
+local Object = require "std.object"
 
 
 local punct = "%(%)%{%}%[%]%,%?%*%;%:"

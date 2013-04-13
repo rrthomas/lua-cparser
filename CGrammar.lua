@@ -6,7 +6,7 @@
 -- TODO: Add rules for function_definition
 -- TODO: Make enumeration_constant work in the same way as typedefs
 
-require "set"
+local set = require "std.set"
 
 -- Remove housekeeping info
 do
